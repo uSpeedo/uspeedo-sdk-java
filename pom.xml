@@ -7,7 +7,7 @@
     <groupId>com.uspeedo</groupId>
     <artifactId>uspeedo-sdk-java</artifactId>
     <packaging>pom</packaging>
-    <version>1.4.1-release</version>
+    <version>1.5.0-release</version>
     <modules>
         <module>uspeedo-sdk-java-common</module>
         <module>uspeedo-sdk-java-whatsapp</module>

@@ -86,7 +86,12 @@ public class GetUSMSSendReceiptResp extends Response {
     @SerializedName("AccountId")
     private Integer accountId;
         
-    
+    /**
+     * 
+     */
+    @SerializedName("BrevityCode")
+    private String brevityCode;
+        
         
     /**
      * 
@@ -94,7 +99,13 @@ public class GetUSMSSendReceiptResp extends Response {
     @SerializedName("CostCount")
     private Integer costCount;
         
-    
+            
+    /**
+     * 
+     */
+    @SerializedName("CountryCode")
+    private String countryCode;
+        
         
     /**
      * 
@@ -151,6 +162,14 @@ public class GetUSMSSendReceiptResp extends Response {
         this.accountId = accountId;
     }
     
+    public String getBrevityCode() {
+        return brevityCode;
+    }
+
+    public void setBrevityCode(String brevityCode) {
+        this.brevityCode = brevityCode;
+    }
+
     public Integer getCostCount() {
         return costCount;
     }
@@ -158,7 +177,15 @@ public class GetUSMSSendReceiptResp extends Response {
     public void setCostCount(Integer costCount) {
         this.costCount = costCount;
     }
-    
+
+    public String getCountryCode() {
+        return countryCode;
+    }
+
+    public void setCountryCode(String countryCode) {
+        this.countryCode = countryCode;
+    }
+        
     public String getPhone() {
         return phone;
     }
