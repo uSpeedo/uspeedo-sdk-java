@@ -59,7 +59,19 @@ public class SendEmailTemplateReq extends Request {
     @NotEmpty
     @USpeedoParam("TemplateId")
     private String templateId;
-        
+
+    /**
+     * Subject - email subject (optional)
+     */
+    @USpeedoParam("Subject")
+    private String subject;
+
+    /**
+     * Abstract - email abstract/summary (optional)
+     */
+    @USpeedoParam("Abstract")
+    private String abstractContent;
+
     
     public Integer getAccountId() {
         return accountId;
@@ -92,6 +104,23 @@ public class SendEmailTemplateReq extends Request {
     public void setTemplateId(String templateId) {
         this.templateId = templateId;
     }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public String getAbstractContent() {
+        return abstractContent;
+    }
+
+    public void setAbstractContent(String abstractContent) {
+        this.abstractContent = abstractContent;
+    }
+
     
     public static class TargetEmail extends Request {
         
