@@ -32,10 +32,10 @@ import java.util.Arrays;
 import java.util.Map;
 
 /**
- * Email 集成测试
+ * Email integration test
  * <p>
- * 1. 序列化测试：验证 Subject、Abstract 可选字段的 encode 行为
- * 2. 真实 API 调用：需设置环境变量 USpeedo_PUBLIC_KEY、USpeedo_PRIVATE_KEY，否则跳过
+ * 1. Serialization test: verify encode behavior of optional Subject and Abstract fields
+ * 2. Real API call: requires USpeedo_PUBLIC_KEY and USpeedo_PRIVATE_KEY env vars, otherwise skipped
  */
 public class EmailClientIntegrationTest {
 
@@ -57,13 +57,13 @@ public class EmailClientIntegrationTest {
     @Test
     public void testSendEmailTemplateReqEncodeWithOptionalFields() throws USpeedoException {
         SendEmailTemplateReq req = buildMinimalRequest();
-        req.setSubject("自定义邮件主题");
-        req.setAbstractContent("邮件摘要内容");
+        req.setSubject("Custom email subject");
+        req.setAbstractContent("Email abstract content");
 
         Map<String, Object> encoded = req.encode();
 
-        Assert.assertEquals("自定义邮件主题", encoded.get("Subject"));
-        Assert.assertEquals("邮件摘要内容", encoded.get("Abstract"));
+        Assert.assertEquals("Custom email subject", encoded.get("Subject"));
+        Assert.assertEquals("Email abstract content", encoded.get("Abstract"));
     }
 
     @Test
@@ -78,8 +78,8 @@ public class EmailClientIntegrationTest {
         EmailClient client = new EmailClient(config, credential);
 
         SendEmailTemplateReq req = buildMinimalRequest();
-        req.setSubject("集成测试主题");
-        req.setAbstractContent("集成测试摘要");
+        req.setSubject("Integration test subject");
+        req.setAbstractContent("Integration test abstract");
 
         SendEmailTemplateRes resp = client.sendEmailTemplate(req);
 

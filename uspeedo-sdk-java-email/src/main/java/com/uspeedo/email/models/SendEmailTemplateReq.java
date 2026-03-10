@@ -61,13 +61,13 @@ public class SendEmailTemplateReq extends Request {
     private String templateId;
 
     /**
-     * Subject - 邮件主题（可选）
+     * Subject - email subject (optional)
      */
     @USpeedoParam("Subject")
     private String subject;
 
     /**
-     * Abstract - 邮件摘要（可选）
+     * Abstract - email abstract/summary (optional)
      */
     @USpeedoParam("Abstract")
     private String abstractContent;
