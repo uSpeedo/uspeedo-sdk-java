@@ -70,14 +70,17 @@ public class EmailClientIntegrationTest {
     public void testSendEmailTemplateIntegration() throws USpeedoException {
         String publicKey = System.getenv("USpeedo_PUBLIC_KEY");
         String privateKey = System.getenv("USpeedo_PRIVATE_KEY");
+        String templateId = System.getenv("USpeedo_INTEGRATION_TEMPLATE_ID");
         Assume.assumeNotNull("Skip: USpeedo_PUBLIC_KEY not set", publicKey);
         Assume.assumeNotNull("Skip: USpeedo_PRIVATE_KEY not set", privateKey);
+        Assume.assumeNotNull("Skip: USpeedo_INTEGRATION_TEMPLATE_ID not set (use real template ID for integration test)", templateId);
 
         Config config = new Config();
         Credential credential = new Credential(publicKey, privateKey);
         EmailClient client = new EmailClient(config, credential);
 
         SendEmailTemplateReq req = buildMinimalRequest();
+        req.setTemplateId(templateId);
         req.setSubject("Integration test subject");
         req.setAbstractContent("Integration test abstract");
 
